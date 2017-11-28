@@ -25,7 +25,10 @@ void main()
 	gst.overTex.loadFromFile("overGUI.png");
 	gst.frame.loadFromFile("frame.png");
 	gst.frameWid = 5;
-
+	static GUIStyle gst2;
+	gst2.mainTex.loadFromFile("01.png");
+	gst2.frame.loadFromFile("02.png");
+	gst2.frameWid = 5;
 	//пример создания стиля текста
 	static TextStyle tst;
 	tst.font.loadFromFile("Robotic.ttf");
@@ -61,6 +64,9 @@ void main()
 	// Cоздание прогресс бара. 
 	std::shared_ptr<GUIProgressBar> progressBar = layer->CreateProgressBar(SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT / 3, 200, 30, "Sorting...", &tst, &gst,
 		0, 200, Color::White, Color::Green);
+
+	std::shared_ptr<MenuBar> menuBar = layer->CreateMenuBar(0, 0,SCREEN_WIDTH-12,50,"", &tst, &gst2,
+		0, 200, Color::White);
 
 	std::shared_ptr<ScrollBar> scrollbarHor = layer->CreateScrollBar(0, 0, 0, 0, "test", &tst, &gst, Orientation::HORIZONTAL);
 

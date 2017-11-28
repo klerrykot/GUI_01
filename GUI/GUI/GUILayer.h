@@ -45,6 +45,9 @@ public:
 	std::shared_ptr<GUIProgressBar> CreateProgressBar(float x, float y, float width, float height,
 		std::string text, TextStyle *tstyle, GUIStyle *gstyle,
 		float leftBorder, float rightBorder, Color staticBarColor, Color dynamicBarColor);
+	std::shared_ptr<MenuBar> CreateMenuBar(float x, float y, float width, float height, std::string text, TextStyle *tstyle,
+		 GUIStyle *gstyle,
+		float leftBorder, float rightBorder, Color staticBarColor);
 
 	std::shared_ptr<ScrollBar> CreateScrollBar(float x, float y, float width, float height, std::string text, TextStyle *tstyle, GUIStyle *gstyle, Orientation orientation);
 	

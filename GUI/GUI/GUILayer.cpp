@@ -103,6 +103,17 @@ std::shared_ptr<GUIProgressBar> GUILayer::CreateProgressBar(float x, float y, fl
 	return progressBar;
 }
 
+std::shared_ptr<MenuBar> GUILayer::CreateMenuBar(float x, float y, float width, float height, std::string text, TextStyle *tstyle,
+	 GUIStyle *gstyle,
+	float leftBorder, float rightBorder, Color staticBarColor)
+{
+	std::shared_ptr<MenuBar> menuBar(new MenuBar(window, x, y, width, height,text,tstyle, gstyle, leftBorder, rightBorder, staticBarColor));
+	menuBar->parent = this;
+	elements.push_back(menuBar);
+	return menuBar;
+}
+
+
 void GUILayer::notifyAll(const sf::Event & event) const
 {
 	for (auto& element : elements)
