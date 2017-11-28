@@ -8,6 +8,22 @@ void buttonAction()
 {
 	std::cout << "Button pressed!" << std::endl;
 }
+void buttonAction1()
+{
+	std::cout << "Button 1 pressed!" << std::endl;
+}
+void buttonAction2()
+{
+	std::cout << "Button 2  pressed!" << std::endl;
+}
+void buttonAction3()
+{
+	std::cout << "Button 3 pressed!" << std::endl;
+}
+void buttonAction4()
+{
+	std::cout << "Button 4 pressed!" << std::endl;
+}
 
 //функция, которая будет вызываться каждый кадр во время перемещения слайдера
 void onSliderMove(float slider_value)
@@ -67,7 +83,10 @@ void main()
 
 	std::shared_ptr<MenuBar> menuBar = layer->CreateMenuBar(0, 0,SCREEN_WIDTH-12,50,"", &tst, &gst2,
 		0, 200, Color::White);
-
+	menuBar->addButton("1",&buttonAction1);
+	menuBar->addButton("2", &buttonAction2);
+	menuBar->addButton("3", &buttonAction3);
+	menuBar->addButton("4", &buttonAction4);
 	std::shared_ptr<ScrollBar> scrollbarHor = layer->CreateScrollBar(0, 0, 0, 0, "test", &tst, &gst, Orientation::HORIZONTAL);
 
 	std::shared_ptr<ScrollBar> scrollbarVert = layer->CreateScrollBar(0, 0, 0, 0, "test", &tst, &gst, Orientation::VERTICAL);

@@ -107,7 +107,7 @@ std::shared_ptr<MenuBar> GUILayer::CreateMenuBar(float x, float y, float width, 
 	 GUIStyle *gstyle,
 	float leftBorder, float rightBorder, Color staticBarColor)
 {
-	std::shared_ptr<MenuBar> menuBar(new MenuBar(window, x, y, width, height,text,tstyle, gstyle, leftBorder, rightBorder, staticBarColor));
+	std::shared_ptr<MenuBar> menuBar(new MenuBar(window, x, y, width, height,text,tstyle, gstyle, leftBorder, rightBorder, staticBarColor,this));
 	menuBar->parent = this;
 	elements.push_back(menuBar);
 	return menuBar;
